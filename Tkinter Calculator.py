@@ -1,36 +1,40 @@
 from tkinter import *
 
 window = Tk()
-window.title("Calculator")    
+window.title("Calculator")  
+
+def clickButton(number):
+	return
+
 
 # Created a entry box to output the result of the calculatioon 
 resultBox = Entry(window, width=50, borderwidth = 6)
 resultBox.grid(row=0, column=0, padx = 60, columnspan=4)
 
 # List of Buttons in order
-clearButton = Button(window, text = "Clear", padx=160, pady=15)			# Set padding to 160 to over 3 columns
-eqButton = Button(window, text = "=", padx=50, pady=15)
+clearButton = Button(window, text = "Clear", padx=160, pady=15, command = clickButton())			# Set padding to 160 to over 3 columns
+eqButton = Button(window, text = "=", padx=50, pady=15, command = clickButton())
 
-Button9 = Button(window, text = "9", padx=50, pady=15)
-Button8 = Button(window, text = "8", padx=50, pady=15)
-Button7 = Button(window, text = "7", padx=50, pady=15)
-plusButton = Button(window, text = "+", padx=50, pady=15)
+Button9 = Button(window, text = "9", padx=50, pady=15, command = clickButton())
+Button8 = Button(window, text = "8", padx=50, pady=15, command = clickButton())
+Button7 = Button(window, text = "7", padx=50, pady=15, command = clickButton())
+plusButton = Button(window, text = "+", padx=50, pady=15, command = clickButton())
 
-Button6 = Button(window, text = "6", padx=50, pady=15)
-Button5 = Button(window, text = "5", padx=50, pady=15)
-Button4 = Button(window, text = "4", padx=50, pady=15)
-minusButton = Button(window, text = "-", padx=50, pady=15)
+Button6 = Button(window, text = "6", padx=50, pady=15, command = clickButton())
+Button5 = Button(window, text = "5", padx=50, pady=15, command = clickButton())
+Button4 = Button(window, text = "4", padx=50, pady=15, command = clickButton())
+minusButton = Button(window, text = "-", padx=50, pady=15, command = clickButton())
 
-Button3 = Button(window, text = "3", padx=50, pady=15)
-Button2 = Button(window, text = "2", padx=50, pady=15)
-Button1 = Button(window, text = "1", padx=50, pady=15)
-multButton = Button(window, text = "x", padx=50, pady=15)
+Button3 = Button(window, text = "3", padx=50, pady=15, command = clickButton())
+Button2 = Button(window, text = "2", padx=50, pady=15, command = clickButton())
+Button1 = Button(window, text = "1", padx=50, pady=15, command = clickButton())
+multButton = Button(window, text = "x", padx=50, pady=15, command = clickButton())
 
-Button0 = Button(window, text = "0", padx=170, pady=15)					# Set padding to 170 to over 3 columns greater than "Clear" as that was a word
-divButton = Button(window, text = "÷", padx=50, pady=15)
+Button0 = Button(window, text = "0", padx=170, pady=15, command = clickButton())				# Set padding to 170 to over 3 columns greater than "Clear" as that was a word
+divButton = Button(window, text = "÷", padx=50, pady=15, command = clickButton())
 
 # Lists of Grids
-clearButton.grid(row=1, column=0, columnspan=3)							# Set columnspan to 3 to cover 3 rows and make it allign
+clearButton.grid(row=1, column=0, columnspan=3)													# Set columnspan to 3 to cover 3 rows and make it allign
 eqButton.grid(row=1, column=3)
 
 Button9.grid(row=2, column=0)
@@ -52,13 +56,3 @@ Button0.grid(row=5,column=0, columnspan=3)								# Set columnspan to 3 to cover
 divButton.grid(row=5, column=3)
 
 window.mainloop()
-
-
-# Errors 
-# Started Columns from 1 instead of 0 which caused allignment issues
-# Thought column span worked the same way so put column span 2 instead of 3 for clear and 0
-# Started of with different paddings for each button which was an issue
-# Mixed up padx with pady 
-# Padding was too large before
-# Put grid and button next to each other which made the code more difficute to read
-# Break code up to make it more readable
