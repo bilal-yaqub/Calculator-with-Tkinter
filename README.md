@@ -1,1 +1,1 @@
-# Calculator-with-Tkinter
+Creating a simple calculator using Tkinter 
